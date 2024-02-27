@@ -50,7 +50,6 @@ class Player(pygame.sprite.Sprite):
         self.tree_sprites = tree_sprites
 
     def use_tool(self):
-        print('tool use')
         if self.selected_tool == 'hoe':
             pass
         if self.selected_tool == 'axe':
