@@ -15,6 +15,13 @@ class Generic(pygame.sprite.Sprite):
                                                0.2, -self.rect.height * 0.75)
 
 
+class Interaction(Generic):
+    def __init__(self, pos, size, groups, name):
+        surf = pygame.Surface(size)
+        super().__init__(pos, surf, groups)
+        self.name = name
+
+
 class Water(Generic):
     def __init__(self, pos, frames, groups):
 
