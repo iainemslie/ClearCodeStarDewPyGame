@@ -81,7 +81,6 @@ class Tree(Generic):
             join('graphics',
                  'stumps',
                  f'{"small" if name == "Small" else "large"}.png')).convert_alpha()
-        self.invul_timer = Timer(200)
 
         self.pos = pos
         # apples
@@ -93,9 +92,15 @@ class Tree(Generic):
 
         self.player_add = player_add
 
+        # sounds
+        self.axe_sound = pygame.mixer.Sound(join('audio', 'axe.mp3'))
+
     def damage(self):
         # damage the tree
         self.health -= 1
+
+        # play sound
+        self.axe_sound.play()
 
         # remove an apple
         if len(self.apple_sprites.sprites()) > 0:
